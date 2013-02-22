@@ -1,0 +1,43 @@
+<script type="text/javascript">
+function display(doc){
+
+var mod_div = document.getElementById("model");
+mod_div.appendChild(document.getElementById('main'));
+mod_div.style.zoom=.50;
+mod_div.style.zIndex=2;
+
+mod_div.style.display='';
+alert("hello");
+
+
+}
+</script>
+
+
+
+
+
+
+<div id="user_nav">
+  <% if user_signed_in? %>
+    
+      <%= link_to "Create Album",new_album_url %><br/>
+<%if @albums%>
+   <br/><b/>Album List</b><br/>
+     <% @albums.each do|a| %>
+<br/>
+ <div>
+    <%=link_to a.title,album_url(a)%> &nbsp;
+ </div>
+  <div >
+    <%= link_to "View Album",album_url(a) %>
+  </div>
+
+<%end%>
+<%else%>
+<br/><b/>Album List Empty</b>
+<%end%>
+    <% end %>
+
+</div>
+

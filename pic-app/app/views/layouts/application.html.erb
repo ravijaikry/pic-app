@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PicApp</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+     <%#= javascript_include_tag :defaults, :cache => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div id="main">
+      <%if flash[:notice]%>
+      <p class="notice"><%= notice  %></p>
+      <%end%>
+      <%if flash[:alert]%>
+      <p class="alert"><%= alert %></p>
+      <%end%>
+      <%=render "layouts/welcome_banner"%>
+<%=render "layouts/menubar"%>
+      <div id="site_content">
+        <div class="sidebar_container">
+          <div class="sidebar">
+            <div class="sidebar_item">
+              <h2>pic-app</h2>
+              <p>Welcome to our pic-app.</p>
+            </div><!--close sidebar_item-->
+          </div><!--close sidebar-->
+        </div><!--close sidebar_container-->
+       <%=render "layouts/slide_show"%>
+        <div id="content">
+          <div class="content_item">
+            <h1>Welcome To pic-app</h1>
+             <%= yield %>
+          </div><!--close content_item-->
+        </div><!--close content-->
+      </div><!--close site_content-->
+    </div><!--close main-->
+    <div id="footer">
+	  copyright@pic-app
+    </div><!--close footer--><div id="model" style="display: none;"></div>
+<input type="button" name="test" onclick="display(document)">click me</input>
+
+
+
+
+  </body>
+</html>

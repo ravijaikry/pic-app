@@ -1,0 +1,17 @@
+<div id="header">
+  <div id="banner">
+    <div id="welcome">
+      <h1>Pic-app</h1>
+    </div><!--close welcome-->
+    <div id="welcome_slogan">
+      <h1><% if user_signed_in? %>
+          Signed in as <%= current_user.email %>
+           <%= link_to "Change Password", edit_password_path(current_user) %>
+          <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+          <br/>
+        <% else %>
+          <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+        <% end %></h1><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+    </div><!--close welcome_slogan-->
+  </div><!--close banner-->
+</div><!--close header-->

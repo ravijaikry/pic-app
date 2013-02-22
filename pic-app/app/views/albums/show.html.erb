@@ -1,0 +1,14 @@
+
+<div>
+<h3>Title &nbsp;<%= @album.title %></h3><br/>
+<h4>Description &nbsp;<%= @album.description %></h4>
+<div>
+<hr/>
+
+<%@album.images.each do|image|%>
+<%= image_tag image.photo.url(:small) %><br/>
+<%end%>
+<%= link_to_function "Back", "history.back()" %>
+
+
+

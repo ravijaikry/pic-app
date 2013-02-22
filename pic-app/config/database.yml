@@ -1,0 +1,21 @@
+# fb credential
+ #App ID:	550431241652060
+#App Secret:	2d60504c061c859097fd8c259ef60c2c
+ development:
+  adapter: mysql2
+  database: picapps_development
+  username: root
+  password: mysql
+  host: localhost
+test:
+  adapter: mysql2
+  database: picapps_test
+  username: root
+  password: mysql
+  host: localhost
+production:
+  adapter: mysql
+  database: picapps_production
+  username: root
+  password: mysql
+  host: localhost
